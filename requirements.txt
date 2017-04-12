@@ -6,7 +6,9 @@ Flask==0.12.1
 itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
+olefile==0.44
 packaging==16.8
+Pillow==4.1.0
 pyparsing==2.2.0
 requests==2.13.0
 six==1.10.0
