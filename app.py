@@ -13,10 +13,10 @@ def home():
 	return render_template ('index.html')
 
 
-@app.route('/file-download/')
-def test():
+
+def test(id):
 	filename = str(id) + ".jpg"
-	url = "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-169777.jpg"
+	url = "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-"  + id + ".jpg"
 	headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
 	
 	# print(url)
@@ -35,6 +35,7 @@ def test():
 		attachment_filename=filename, 
 		as_attachment=True)
 
+@app.route('/file-download/')
 def index():
 	wallhaven_random_url = "https://alpha.wallhaven.cc/random"
 	headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
@@ -50,7 +51,7 @@ def index():
 	for item in uList.findAll('li'):
 	    image_id = item.figure['data-wallpaper-id']
 	    ids = ids + " " + str((image_id))
-	    return(download_image(image_id))
+	    return(test(image_id))
 	
 
 @app.route('/file-download/')
