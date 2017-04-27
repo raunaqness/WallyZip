@@ -12,9 +12,7 @@ app = Flask(__name__)
 def home():
 	return render_template ('index.html')
 
-
-
-def test(id):
+def download_image(id):
 	filename = str(id) + ".jpg"
 	url = "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-"  + id + ".jpg"
 	headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
@@ -51,30 +49,8 @@ def index():
 	for item in uList.findAll('li'):
 	    image_id = item.figure['data-wallpaper-id']
 	    ids = ids + " " + str((image_id))
-	    return(test(image_id))
+	    return(download_image(image_id))
 	
-
-@app.route('/file-download/')
-def download_image(id):
-	filename = str(id) + ".jpg"
-	url = "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-" + str(id) + ".jpg"
-	headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
-	
-	print(url)
-	r = requests.get(url, headers = headers, stream = True)
-	print("Request successful")
-
-	# imgIO = StringIO.StringIO()
-	imgIO = io.BytesIO()
-	for chunk in r.iter_content(chunk_size=1024):
-		if chunk:
-			imgIO.write(chunk)
-
-	imgIO.seek(0)
-
-	return send_file(imgIO, 
-		attachment_filename=filename, 
-		as_attachment=True)
 
 if __name__ == '__main__':
 	app.run(debug=True)
