@@ -1,4 +1,4 @@
-from flask import Flask, send_file, render_template, make_response, send_from_directory
+from flask import Flask, send_file, render_template, make_response, send_from_directory, redirect, url_for
 from bs4 import BeautifulSoup
 import requests
 import os
@@ -14,7 +14,7 @@ app = Flask(__name__)
 def home():
 	return render_template ('index.html')
 
-@app.route('/file-download/')
+
 def get_image_ids():
 	wallhaven_random_url = "https://alpha.wallhaven.cc/random"
 	headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
@@ -32,10 +32,13 @@ def get_image_ids():
 	    image_id = str(item.figure['data-wallpaper-id'])
 	    image_ids.append(image_id)
 
-	return(download_images(image_ids))
+	# return(download_images(image_ids))
+	return (image_ids)
 	
+@app.route('/file-download/')
+def download_images():
 
-def download_images(ids):
+	ids = get_image_ids()
 
 	headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
 	image_folder = 'Images'
@@ -56,52 +59,21 @@ def download_images(ids):
 		with open(os.path.join(image_folder,filename), 'wb') as out_file:
 			shutil.copyfileobj(response.raw, out_file)
 
-		# # imgIO = StringIO.StringIO()
-		# imgIO = io.BytesIO()
-		# for chunk in r.iter_content(chunk_size=1024):
-		# 	if chunk:
-		# 		imgIO.write(chunk)
-
-		# imgIO.seek(0)
-
 	print("Files downloaded succesfully")
 
-	return ("GGWP")
+	return redirect(url_for('create_zip'))
 
-	# return send_file(imgIO, 
-	# 	attachment_filename=filename, 
-	# 	as_attachment=True)
-
-@app.route('/app2')
-def download_image_2(id=29021):
-	image_folder = 'thisisit'
-	os.makedirs(image_folder)
-	filename = str(id) + ".jpg"
-	url2 = "https://wallpaperss.wallhaven.cc/wallpapers/full/wallhaven-"  + str(id) + ".jpg"
-	url = "https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-29021.jpg"
-	headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
-	
-	response = requests.get(url, headers = headers, stream = True)
-	# save in image/id.jpg
-	with open(os.path.join(image_folder,filename), 'wb') as out_file:
-		shutil.copyfileobj(response.raw, out_file)
-
-	# zipf = zipfile.ZipFile('images.zip', 'w', zipfile.ZIP_DEFLATED)
-	# for root, dirs, files in os.walk(image_folder):
-	# 	for file in files:
-	# 		zipf.write(os.path.join(root, file))
-	# zipf.close()
-
-	# zip out the image folder
+@app.route('/zip')
+def create_zip():
+	image_folder = 'Images'
 	zipf = zipfile.ZipFile('images.zip', 'w', zipfile.ZIP_DEFLATED)
 	for root, dirs, files in os.walk(image_folder):
 	    for file in files:
 	        zipf.write(os.path.join(root, file))
 	zipf.close()
 
-	return send_file('images.zip')
-
-
+	return send_file('images.zip', attachment_filename="GG.zip", as_attachment=True)
+	
 
 if __name__ == '__main__':
 	app.run(debug=True)
