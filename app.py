@@ -72,7 +72,7 @@ def create_zip():
 	        zipf.write(os.path.join(root, file))
 	zipf.close()
 
-	return send_file('images.zip', attachment_filename="GG.zip", as_attachment=True)
+	return send_file('images.zip', attachment_filename="Images-Zip.zip", as_attachment=True)
 	
 
 if __name__ == '__main__':
