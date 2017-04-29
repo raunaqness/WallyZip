@@ -2,14 +2,21 @@
 <html>
 <head>
 	<title>WallyDolly</title>
+
+	<script type="text/javascript">
+		function wait(){
+			document.getElementById('Wait').innerHTML = 'Creating Zip, Please wait...'
+		}
+	</script>
 </head>
 <body>
 
 {% block body %}
 <div>
 	<a href = "/file-download/" target="blank">
-	<button> Download</button> </a>
+	<button onClick="wait()"> Download</button> </a>
 </div>
+<p id='Wait'></p>
 
 {% endblock %}
 
