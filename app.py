@@ -8,11 +8,16 @@ import io
 import shutil
 import zipfile
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="", static_folder="static")
+app.static_folder = 'static'
 
 @app.route('/')
 def home():
 	return render_template ('index.html')
+
+@app.route('/2')
+def home2():
+	return render_template ('index2.html')
 
 
 def get_image_ids():
