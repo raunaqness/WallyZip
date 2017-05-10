@@ -2,7 +2,8 @@
 
 WallyZip is a simple Flask webapp that extracts wallpapers from a source on the internet and curates it into a simple .zip file for easy download.
 
-Idea by [Xorforce](http://github.com/xorforce).
+Idea by [Xorforce](http://github.com/xorforce)
+
 Logo by [Pankaj Kumar](#)
 
 Try it out at [http://wallyzip.herokuapp.com](http://wallyzip.herokuapp.com).
