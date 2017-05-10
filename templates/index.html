@@ -36,6 +36,14 @@
   ga('create', 'UA-78972945-2', 'auto');
   ga('send', 'pageview');
 
+  function downloadClick() {
+     
+    document.getElementById("link").innerHTML="Zipping, Please wait...";
+    return false;
+  };
+
+
+
 </script>
 
 </head>
@@ -72,10 +80,7 @@
             <br><br><br><br><br>
                 <h1 id="homeHeading">Your next Favorite Source of Free Wallpapers</h1>
                 <hr>
-<!-- 
-                <p>WallpapersAPI aims to provide a simple, hassle-free way to download multiple wallpapers from popular websites.</p>
-                 -->
-                <button class="btn btn-default btn-xl sr-button"><a href="/file-download/">Download</a></button>
+                <button class="btn btn-default btn-xl sr-button" id="DownloadButton" onClick="downloadClick()"><a  id="link" href="/file-download/">Download</a></button>
                 <br><br>
                 Every time you click 'Download', a new collection is created with ~20 random wallpapers.
                 <br><br><br><br><br>
