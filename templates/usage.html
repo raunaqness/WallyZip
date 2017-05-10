@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>WallpapersAPI - Home</title>
+    <title>WallpapersAPI - Usage</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
@@ -21,22 +21,6 @@
 
     <!-- Theme CSS -->
     <link href="{{ url_for('static', filename='css/creative.min.css') }}" rel="stylesheet">
-
-    <script type="text/javascript">
-        function wait(){
-            document.getElementById('Wait').innerHTML = 'Creating Zip, Please wait...'
-        }
-
-        
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-78972945-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 </head>
 
@@ -56,9 +40,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="/">Home</a>
                     </li>
-                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -68,19 +51,25 @@
 
     <header>
         <div class="header-content">
-            <div class="header-content-inner">
+            <div class="header-content-inner" style="text-align:left">
             <br><br><br><br><br>
-                <h1 id="homeHeading">Your next Favorite Source of Free Wallpapers</h1>
-                <hr>
-<!-- 
-                <p>WallpapersAPI aims to provide a simple, hassle-free way to download multiple wallpapers from popular websites.</p>
-                 -->
-                <button class="btn btn-default btn-xl sr-button"><a href="/file-download/">Download</a></button>
+                <h1 id="homeHeading">Usage Policy</h1>
+                <br><br>    
+
+                Our site (and all of its contents) is free of charge for anyone for personal usage. Organisations (for instance, but not limited to, non-profit or companies) may use the system if they clear this with the system operators first. Permission for organisations/companies is not needed for obvious "well meaning" usage, i.e. distributing works of cultural benefit for the end user.
                 <br><br>
-                Every time you click 'Download', a new collection is created with ~20 random wallpapers.
-                <br><br><br><br><br>
+
+                The site is run privately. That means that we do not guarantee that the site will be available for users at all time but we try our best to make the site run stable. We take no responsibility for loss of income or similar due to downtime/failure.
+                <br><br>
+
+                This policy may change at any time, please check in before using the site.
+                <br><br>
+
+                <b>Connecting to our site means that you accept this policy agreement.</b>
+                <br><br>
+
+                <i>Last updated: 10/05/2017</i>
             </div>
-            <p style="text-align:center">Made on a boring Saturday Evening by <a href='http://raunaq.me'>Gur Raunaq Singh</a></p>
         </div>
     </header>
 
@@ -88,7 +77,7 @@
     
     
     <aside class="bg-dark">
-        <div class="container text-center" id="about">
+        <div class="container text-center">
             <div class="call-to-action" style="text-align:left">
             <p style="text-align:left"><h5>Copyright © 2016 WallyZip () All rights reserved. 
             <a href='/usage'>Usage Policy</a> - 

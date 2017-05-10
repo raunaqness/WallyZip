@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>WallpapersAPI - Home</title>
+    <title>WallpapersAPI - Usage</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
@@ -21,22 +21,6 @@
 
     <!-- Theme CSS -->
     <link href="{{ url_for('static', filename='css/creative.min.css') }}" rel="stylesheet">
-
-    <script type="text/javascript">
-        function wait(){
-            document.getElementById('Wait').innerHTML = 'Creating Zip, Please wait...'
-        }
-
-        
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-78972945-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 </head>
 
@@ -56,9 +40,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="/">Home</a>
                     </li>
-                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -68,19 +51,23 @@
 
     <header>
         <div class="header-content">
-            <div class="header-content-inner">
-            <br><br><br><br><br>
-                <h1 id="homeHeading">Your next Favorite Source of Free Wallpapers</h1>
-                <hr>
-<!-- 
-                <p>WallpapersAPI aims to provide a simple, hassle-free way to download multiple wallpapers from popular websites.</p>
-                 -->
-                <button class="btn btn-default btn-xl sr-button"><a href="/file-download/">Download</a></button>
+            <div class="header-content-inner" style="text-align:left">
+            <br><br>
+                <h1 id="homeHeading">Copyright</h1>
+                <br><br>    
+
+                You may submit a notification pursuant to the Digital Millennium Copyright Act (DMCA) by providing our Copyright Agent with the following information in writing (see 17 U.S.C 512(c)(3) for further detail):
                 <br><br>
-                Every time you click 'Download', a new collection is created with ~20 random wallpapers.
-                <br><br><br><br><br>
+                <ul>
+                <li>an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright's interest;</li>
+                <li>a description of the copyrighted work that you claim has been infringed, including the URL (i.e., web page address) of the location where the copyrighted work exists or a copy of the copyrighted work;</li>
+                <li>identification of the URL or other specific location on the Service where the material that you claim is infringing is located;</li>
+                <li>your address, telephone number, and email address;</li>
+                <li>a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;</li>
+                <li>a statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
+                <br><br>
+                You can contact our Copyright Agent via email at ggwpboiz1234@gmail.com
             </div>
-            <p style="text-align:center">Made on a boring Saturday Evening by <a href='http://raunaq.me'>Gur Raunaq Singh</a></p>
         </div>
     </header>
 
@@ -88,7 +75,7 @@
     
     
     <aside class="bg-dark">
-        <div class="container text-center" id="about">
+        <div class="container text-center">
             <div class="call-to-action" style="text-align:left">
             <p style="text-align:left"><h5>Copyright © 2016 WallyZip () All rights reserved. 
             <a href='/usage'>Usage Policy</a> - 

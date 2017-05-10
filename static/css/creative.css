@@ -52,7 +52,7 @@ section {
   padding: 100px 0;
 }
 aside {
-  padding: 50px 0;
+  padding: 10px 0;
 }
 .no-padding {
   padding: 0;
@@ -175,7 +175,7 @@ header .header-content .header-content-inner p {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 @media (min-width: 768px) {
   header {
@@ -199,7 +199,7 @@ header .header-content .header-content-inner p {
   }
   header .header-content .header-content-inner p {
     font-size: 18px;
-    max-width: 80%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }

@@ -7,6 +7,17 @@ import tempfile
 import io
 import shutil
 import zipfile
+import pyrebase
+
+# firebase_config = {
+#   "apiKey": "AIzaSyAchlPGYFUFT7wt5nxTFLMWEtCuuKahKwI",
+#   "authDomain": "wallyzip-cef70.firebaseapp.com",
+#   "databaseURL": "https://wallyzip-cef70.firebaseio.com",
+#   "storageBucket": "wallyzip-cef70.appspot.com",
+#   "serviceAccount": "path/to/serviceAccountCredentials.json"
+# }
+
+# firebase = pyrebase.initialize_app(firebase_config)
 
 app = Flask(__name__, static_url_path="", static_folder="static")
 app.static_folder = 'static'
@@ -15,9 +26,21 @@ app.static_folder = 'static'
 def home():
 	return render_template ('index.html')
 
-@app.route('/2')
-def home2():
-	return render_template ('index2.html')
+@app.route('/usage')
+def usage():
+	return render_template ('usage.html')
+
+@app.route('/disclaimer')
+def disclaimer():
+	return render_template ('disclaimer.html')
+
+@app.route('/copyright')
+def copyright():
+	return render_template ('copyright.html')
+
+@app.route('/dmca')
+def dmca():
+	return render_template ('dmca.html')
 
 
 def get_image_ids():
