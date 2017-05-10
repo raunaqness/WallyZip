@@ -7,17 +7,6 @@ import tempfile
 import io
 import shutil
 import zipfile
-import pyrebase
-
-# firebase_config = {
-#   "apiKey": "AIzaSyAchlPGYFUFT7wt5nxTFLMWEtCuuKahKwI",
-#   "authDomain": "wallyzip-cef70.firebaseapp.com",
-#   "databaseURL": "https://wallyzip-cef70.firebaseio.com",
-#   "storageBucket": "wallyzip-cef70.appspot.com",
-#   "serviceAccount": "path/to/serviceAccountCredentials.json"
-# }
-
-# firebase = pyrebase.initialize_app(firebase_config)
 
 app = Flask(__name__, static_url_path="", static_folder="static")
 app.static_folder = 'static'
