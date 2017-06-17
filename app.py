@@ -31,8 +31,6 @@ def copyright():
 def dmca():
 	return render_template ('dmca.html')
 
-
-
 def get_image_ids():
 	wallhaven_random_url = "https://alpha.wallhaven.cc/random"
 	headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
